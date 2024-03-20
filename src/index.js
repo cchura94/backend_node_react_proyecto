@@ -8,6 +8,7 @@ const rutas = require("./routes/index")
 
 // configurar los paquetes necesarios
 const app = express()
+app.use(express.json()); // req.body (json)
 
 // declarar variables auxiliares
 const PORT = 3000

@@ -1,0 +1,15 @@
+### listar
+GET http://127.0.0.1:3000/api/user
+
+### guardar
+POST http://127.0.0.1:3000/api/user
+Content-Type: application/json
+
+{
+    "name": "pablo",
+    "email": "pablo@mail.com",
+    "password": "pablo54321"
+}
+
+### mostrar
+GET http://127.0.0.1:3000/api/user/1
