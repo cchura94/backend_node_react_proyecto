@@ -26,7 +26,8 @@ git remote add origin https://github.com/cchura94/backend_node_react_proyecto.gi
 ## Comandos necesarios para subir cambios
 ```
 git add .
-
+git commit -m "proyecto base de node"
+git push origin master
 ```
 
 
