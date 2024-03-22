@@ -1,10 +1,12 @@
 // importar paquetes del core de node
 
 // importar paquetes de terceros de (npm, yarn)
-const express = require("express");
+// const express = require("express");
+import express from "express"
 
 // importar paquetes locales
-const rutas = require("./routes/index")
+// const rutas = require("./routes/index")
+import rutas from "./routes/index"
 
 // configurar los paquetes necesarios
 const app = express()

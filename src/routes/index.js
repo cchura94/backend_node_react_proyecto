@@ -1,6 +1,9 @@
-const express = require("express");
-const userController = require("./../controllers/user.controller")
-const categoriaController = require("./../controllers/categoria.controller")
+// const express = require("express");
+import express from "express"
+// const userController = require("./../controllers/user.controller")
+import userController from "./../controllers/user.controller";
+// const categoriaController = require("./../controllers/categoria.controller")
+import categoriaController from "./../controllers/categoria.controller";
 
 const router = express.Router();
 
@@ -22,4 +25,5 @@ router.put("/categoria/:id", categoriaController.modificar);
 router.delete("/categoria/:id", categoriaController.eliminar);
 
 
-module.exports = router
+// module.exports = router
+export default router

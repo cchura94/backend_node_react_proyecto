@@ -1,4 +1,6 @@
-module.exports = {
+
+// module.exports = {
+export default {
     listar(req, res){
         res.json({mensaje: "Lista de Categorias"});
     },
