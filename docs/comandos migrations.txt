@@ -1,0 +1,1 @@
+npx sequelize-cli model:generate --name Persona --attributes nombres:string,apellidos:string,ci:string,genero:string,fecha_nac:date,userId:integer

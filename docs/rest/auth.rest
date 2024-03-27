@@ -1,0 +1,18 @@
+POST http://127.0.0.1:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "pedro",
+    "email": "pedro@mail.com",
+    "password": "pedro54321"
+}
+
+### login
+POST http://127.0.0.1:3000/api/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "pedro@mail.com",
+    "password": "pedro54321"
+}

@@ -4,12 +4,18 @@ import express from "express"
 import userController from "./../controllers/user.controller";
 // const categoriaController = require("./../controllers/categoria.controller")
 import categoriaController from "./../controllers/categoria.controller";
+import authController from "./../controllers/auth.controller"
 
 const router = express.Router();
 
 router.get("/", function(req, res){
     res.json({mensaje: "PAGINA DE INICIO"})
 })
+
+// auth
+router.post('/auth/login', authController.login);
+router.post('/auth/register', authController.register);
+router.post('/auth/perfil', authController.perfil);
 
 router.get("/user", userController.listar);
 router.post("/user", userController.guardar);
@@ -23,6 +29,7 @@ router.post("/categoria", categoriaController.guardar);
 router.get("/categoria/:id", categoriaController.mostrar);
 router.put("/categoria/:id", categoriaController.modificar);
 router.delete("/categoria/:id", categoriaController.eliminar);
+
 
 
 // module.exports = router
