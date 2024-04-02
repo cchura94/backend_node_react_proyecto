@@ -5,6 +5,7 @@ import userController from "./../controllers/user.controller";
 // const categoriaController = require("./../controllers/categoria.controller")
 import categoriaController from "./../controllers/categoria.controller";
 import authController from "./../controllers/auth.controller"
+import productoController from "./../controllers/producto.controller"
 
 const router = express.Router();
 
@@ -29,6 +30,14 @@ router.post("/categoria", categoriaController.guardar);
 router.get("/categoria/:id", categoriaController.mostrar);
 router.put("/categoria/:id", categoriaController.modificar);
 router.delete("/categoria/:id", categoriaController.eliminar);
+
+// rutas producto
+router.get("/producto", productoController.listar);
+router.post("/producto", productoController.guardar);
+router.get("/producto/:id", productoController.mostrar);
+router.put("/producto/:id", productoController.modificar);
+router.delete("/producto/:id", productoController.eliminar);
+
 
 
 
