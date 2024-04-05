@@ -1,1 +1,23 @@
 GET http://127.0.0.1:3000/api/categoria
+
+### guardar categoria
+POST http://127.0.0.1:3000/api/categoria
+Content-Type: application/json
+
+{
+    "nombre": "JUGUETES",
+    "detalle": "juguetes para niños"
+}
+
+### mostrar
+GET http://127.0.0.1:3000/api/categoria/1
+
+
+### update
+PUT http://127.0.0.1:3000/api/categoria/2
+Content-Type: application/json
+
+{
+    "nombre": "JUGUETES MODIFICADO",
+    "detalle": "juguetes para niños (Actualizado)"
+  }

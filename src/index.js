@@ -3,6 +3,7 @@
 // importar paquetes de terceros de (npm, yarn)
 // const express = require("express");
 import express from "express"
+import cors from "cors"
 
 // importar paquetes locales
 // const rutas = require("./routes/index")
@@ -10,6 +11,9 @@ import rutas from "./routes/index"
 
 // configurar los paquetes necesarios
 const app = express()
+// cors
+app.use(cors())
+
 app.use(express.json()); // req.body (json)
 
 // declarar variables auxiliares
