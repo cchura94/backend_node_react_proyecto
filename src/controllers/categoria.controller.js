@@ -56,7 +56,14 @@ export default {
             return res.status(500).json(error);
         }
     },
-    eliminar: (req, res) => {
-
+    eliminar: async (req, res) => {
+        try {
+            const id = req.params.id;
+            await models.Categoria.destroy({where: {id: id}})
+            return res.status(200).json({error: true, mensaje: "La categoria ha sido eliminada "})
+            
+        } catch (error) {
+            return res.status(500).json(error);
+        }
     }
 }
