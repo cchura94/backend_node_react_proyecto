@@ -52,15 +52,26 @@ module.exports = {
         // usuarios = await User.findAll()
         return res.status(200).json(usuarios);
     },
-    guardar: function(req, res){
+    guardar: async function(req, res){
         // req.params.id // /api/user/6
         // req.query.buscar // /api/user?buscar=pablo
         
-        let datos = req.body; // { name: "admin", email: "admin@mail.com", password: "admin54321" };
-        console.log(datos)
-        usuarios.push(datos);
-        
-        return res.status(200).json({mensaje: "Usuario registrado..."});
+        // let datos = req.body; // { name: "admin", email: "admin@mail.com", password: "admin54321" };
+        // console.log(datos)
+        // usuarios.push(datos);
+
+        try {
+          let datos = req.body;
+            const user = await models.User.create(datos);
+            if(user.id){
+                return res.status(201).json({mensaje: 'Usuario registrado'})
+            }
+            
+            return res.status(422).json({error: true, mensaje: "Error al registrar el usuario"})
+
+        } catch (error) {
+            return res.status(500).json(error);
+        }
     },
     mostrar: (req, res) => {
         let id = req.params.id

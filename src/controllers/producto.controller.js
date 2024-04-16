@@ -9,7 +9,6 @@ export default {
             const page = parseInt(req.query.page)
             const limit = parseInt(req.query.limit)
 
-            console.log(page);
 
             const offset = (page - 1) * limit
 
