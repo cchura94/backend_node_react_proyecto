@@ -42,13 +42,30 @@ const sequelize = new Sequelize('node_test', 'root', '', {
   User.sync()
 */
 
+import { Op } from "sequelize";
 import models from "./../database/models"
 let usuarios = [];
 
 module.exports = {
     async listar(req, res){
 
-        usuarios = await models.User.findAll();
+      const q = req.query.q || '';
+            const page = parseInt(req.query.page) || 1
+            const limit = parseInt(req.query.limit) || 10
+
+
+            const offset = (page - 1) * limit
+
+        const usuarios = await models.User.findAndCountAll({
+            where: {
+              name: {
+                  [Op.like]: `%${q}%`
+              }
+          },
+          // include: [models.Categoria],
+          offset: offset,
+          limit: limit
+          });
         // usuarios = await User.findAll()
         return res.status(200).json(usuarios);
     },

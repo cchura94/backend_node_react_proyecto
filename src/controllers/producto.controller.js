@@ -1,5 +1,6 @@
 import { Op } from "sequelize";
 import models from "./../database/models"
+import { validationResult } from "express-validator";
 
 export default {
     async listar(req, res){
@@ -32,6 +33,13 @@ export default {
     },
     guardar: async function(req, res){
         try {
+            // validando
+            let errors = validationResult(req);
+            if(!errors.isEmpty()) {
+                return res.status(422).json({errors: errors.array()})
+            }
+
+            // guardar
             const datos = req.body;
             const producto = await models.Producto.create(datos)
             if(producto.id) {

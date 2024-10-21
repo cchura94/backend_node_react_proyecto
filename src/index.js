@@ -4,6 +4,7 @@
 // const express = require("express");
 import express from "express"
 import cors from "cors"
+require('dotenv').config();
 
 // importar paquetes locales
 // const rutas = require("./routes/index")
